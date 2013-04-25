@@ -1,0 +1,39 @@
+*
+  padding: 0
+  margin: 0
+
+css-radial-gradient(startColor, endColor)
+  background-color: startColor
+  background: -webkit-gradient(radial, center 0, 0, center 0, 100, color-stop(0%, startColor), color-stop(100%, endColor)) no-repeat
+  background: -webkit-radial-gradient(center 0, circle cover, startColor, endColor) no-repeat
+  background: -moz-radial-gradient(center 0, circle cover, startColor, endColor) no-repeat
+  background: -o-radial-gradient(center 0, circle cover, startColor, endColor) no-repeat
+  background: -ms-radial-gradient(center 0, circle cover, startColor, endColor) no-repeat
+  background: radial-gradient(center 0, circle cover, startColor, endColor) no-repeat
+
+css-linear-gradient(startColor, endColor)
+  background-color: endColor
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(startColor), to(endColor))
+  background: -webkit-linear-gradient(top, startColor, endColor) no-repeat
+  background: -moz-linear-gradient(top, startColor, endColor) no-repeat
+  background: -o-linear-gradient(top, startColor, endColor) no-repeat
+  background: -ms-linear-gradient(top, startColor, endColor) no-repeat
+  background: linear-gradient(top, startColor, endColor) no-repeat
+
+css-box-shadow(hshadow=0, vshadow=0, blur=20px, spread=2px, color=rgba(0, 0, 0, 0.5))
+  -moz-box-shadow: hshadow vshadow blur spread color
+  -webkit-box-shadow: hshadow vshadow blur spread color
+  box-shadow: hshadow vshadow blur spread color
+
+css-rotate(deg)
+  transform: rotate(deg)
+  -ms-transform: rotate(deg)
+  -webkit-transform: rotate(deg)
+  -o-transform: rotate(deg)
+  -moz-transform: rotate(deg)
+
+transition(el, time)
+  transition: el time
+  -moz-transition: el time
+  -webkit-transition: el time
+  -o-transition: el time

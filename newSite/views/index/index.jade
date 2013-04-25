@@ -1,0 +1,111 @@
+extends ../layout
+
+append styles
+  link(href='http://fonts.googleapis.com/css?family=Syncopate:700|Carme', rel='stylesheet', type='text/css')
+
+block content
+  .header-container
+    .header
+      span.item Home
+      span.item Portfolio
+      span.item School Projects
+      span.item Code Snippets
+      span.item Contact Me
+      img.hireme(src='img/hireme.png')
+
+  .title-box-container
+    .title-box
+      .name Dallin Osmun
+      .title Web Designer &nbsp;&nbsp;&nbsp; Javascript Enthusiast &nbsp;&nbsp;&nbsp; Zelda Addict
+
+  .info-box-container
+    .info-box
+      div
+        .title Who am I?
+        .info Hi, My name's Dallin Osmun and I'm a web developer. I attend Utah State University, working on my Bachelor's degree, while I contract with various groups doing their websites. I enjoy reading the Wheel of Time series and watching 'Once Upon A Time' with my friends. In my spare time you'll probably find me playing Zelda or Minecraft (if I'm not coding, that is). I love life and I'm a Mormon. Oh, and I make dang good Italian food.
+        img.me(src='img/me.jpg')
+        table.specs
+          tr
+            td
+              .subtitle-container
+                .subtitle Skills Set
+              ul
+                li Web Design
+                li Responsive Design
+                li Server Side Coding
+                li Knowledgable in RESTful API
+                li Client Side Mashup
+                li Good at Team Management
+            td
+              .subtitle-container
+                .subtitle Programming Knowledge
+              ul
+                li HTML5, Jade
+                li CSS3, LESS, Stylus
+                li Javascript, JSON
+                li JQuery, RequireJS
+                li Handlebars, Backbone
+                li Socket.io
+            td
+              .subtitle-container
+                .subtitle Specialties
+              ul
+                li NodeJS Servers
+                li Javascript with Client Side Mashup
+                li CSS3 including transitions and animations
+                li Responsive Design for mobile devices
+
+  .portfolio-box-container
+    .portfolio-box
+      .title-container
+        .title Recent Projects
+      table.projects
+        tr
+          td
+            img.proj-img(src='img/osmun-thumb.jpg')
+            .proj-name
+              a(href='http://www.osmun.net') www.osmun.net
+          td
+            img.proj-img(src='img/mock-proj.jpg')
+            .proj-name
+              a(href='http://www.lds.org') www.lds.org
+          td
+            img.proj-img(src='img/mock-proj.jpg')
+            .proj-name
+              a(href='http://jerrica.osmun.net') jerrica.osmun.net
+        tr
+          td
+            img.proj-img(src='img/mock-proj.jpg')
+            .proj-name
+              a(href='http://www.antherion.com') www.antherion.com
+          td
+            img.proj-img(src='img/mock-proj.jpg')
+            .proj-name
+              a(href='#') Speedy Shop School Project
+
+  .social-box-container
+    .social-box
+      .title So what are you waiting for?
+      .info
+        span.item Hire Me!!
+        span Or
+        span Follow me
+        .stalkers
+          a(href='//www.twitter.com/dallinosmun')
+            img.logo(src='img/twitter.png')
+          a(href='//www.facebook.com/Veovis')
+            img.logo(src='img/facebook.png')
+          a(href='//www.linkedin.com/profile/view?id=42336136')
+            img.logo(src='img/linkedin.png')
+          a(href='//plus.google.com/118106587848547452215?prsrc=3')
+            img.logo(src='img/gplus.png')
+
+  .footer-box-container
+    .footer-box
+      .copyright Site designed and coded by Dallin Osmun &copy; 2012
+
+  .overlay
+    .popup
+      span Hey There! The site's not done yet but I thought I'd at least get a portion of it up. If you'd like to contact me, shoot me an email at 
+        a(href='mailto:dosmun@gmail.com') dosmun@gmail.com
+      | . Thanks for looking!
