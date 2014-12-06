@@ -19,6 +19,3 @@ app.configure(function () {
     app.use(express.static(__dirname + "/public"));
     app.use(express.errorHandler({dumpExceptions:true, showStack:true}));
 });
-
-// REST Call Routing Registry
-app.get('/stopServer', indexServices.stopServer);

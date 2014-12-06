@@ -1,11 +1,24 @@
 {
-  "name": "mySite",
-  "version": "0.0.1",
+  "name": "dallinosmun.com",
+  "version": "1.0.0",
+  "description": "My Site",
+  "main": "server.js",
   "dependencies": {
-    "express": "3.0.x"
+    "express": "^3.0.0rc2"
   },
-  "engines": {
-    "node": "0.8.x",
-    "npm": "1.1.x"
-  }
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/numso/dallinosmun.com.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/numso/dallinosmun.com/issues"
+  },
+  "homepage": "https://github.com/numso/dallinosmun.com"
 }
