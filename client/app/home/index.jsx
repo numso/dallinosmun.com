@@ -2,6 +2,7 @@ var React = require('react');
 var Header = require('./header');
 var WhoAmI = require('./who-am-i');
 var Skills = require('./skills');
+var Projects = require('./projects');
 
 var Home = React.createClass({
 
@@ -16,6 +17,9 @@ var Home = React.createClass({
         <Row className="info-box">
           <WhoAmI/>
           <Skills/>
+        </Row>
+        <Row className="projects-box">
+          <Projects/>
         </Row>
       </div>
     );
