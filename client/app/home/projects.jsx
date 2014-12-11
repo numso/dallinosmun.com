@@ -2,7 +2,7 @@ var React = require('react');
 
 var Projects = React.createClass({
 
-  getInitialState: function() {
+  getInitialState() {
     return {
       projects: [
         { name: 'www.osmun.net' },
@@ -15,6 +15,7 @@ var Projects = React.createClass({
       ]
     };
   },
+
   render() {
     return (
       <div>

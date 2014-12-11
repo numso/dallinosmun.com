@@ -3,6 +3,7 @@ var Header = require('./header');
 var WhoAmI = require('./who-am-i');
 var Skills = require('./skills');
 var Projects = require('./projects');
+var Social = require('./social');
 
 var Home = React.createClass({
 
@@ -20,6 +21,9 @@ var Home = React.createClass({
         </Row>
         <Row className="projects-box">
           <Projects/>
+        </Row>
+        <Row className="social-box">
+          <Social/>
         </Row>
       </div>
     );
