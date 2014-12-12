@@ -9,6 +9,7 @@ var Social = React.createClass({
         { link: 'http://www.facebook.com/Veovis',                       img: 'img/facebook.png' },
         { link: 'http://www.linkedin.com/profile/view?id=42336136',     img: 'img/linkedin.png' },
         { link: 'http://plus.google.com/118106587848547452215?prsrc=3', img: 'img/gplus.png'    }
+        // add github
       ]
     };
   },
@@ -16,12 +17,14 @@ var Social = React.createClass({
   render() {
     return (
       <div>
-        <h1>Links</h1>
-        <div>
+        <h1>Social</h1>
+        <div style={{display: 'flex'}}>
           {this.state.links.map((l)=>(
-            <a href={l.link} target="_blank">
-              <img src={l.img} style={{width:50}}/>
-            </a>
+            <div style={{padding: 20}}>
+              <a href={l.link} target="_blank">
+                <img src={l.img} style={{width:50}}/>
+              </a>
+            </div>
           ))}
         </div>
       </div>

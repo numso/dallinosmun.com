@@ -1,6 +1,7 @@
 var React = require('react');
 var {RouteHandler} = require('react-router');
 var Navigation = require('./navigation');
+var Footer = require('./footer');
 
 var Wrapper = React.createClass({
 
@@ -9,6 +10,7 @@ var Wrapper = React.createClass({
       <div>
         <Navigation/>
         <RouteHandler/>
+        <Footer/>
       </div>
     );
   }

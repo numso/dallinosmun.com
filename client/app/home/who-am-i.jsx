@@ -24,7 +24,7 @@ var WhoAmI = React.createClass({
   render() {
     return (
       <div className="who-am-i">
-        <div className="title">Who am I?</div>
+        <h1>Who am I?</h1>
         <p>PARAGRAPH BELOW NEEDS UPDATED</p>
         <p>Hi, My name's Dallin Osmun and I'm a web developer. I attend Utah State University, working on my Bachelor's degree, while I contract with various groups doing their websites. I enjoy reading the {this.state.book} series and watching {this.state.show} with my friends. In my spare time you'll probably find me playing {this.state.games[0]} or {this.state.games[1]} (if I'm not coding, that is). I love life and I'm a Mormon. Oh, and I make dang good Italian food.</p>
       </div>
