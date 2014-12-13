@@ -6,10 +6,10 @@ var Social = React.createClass({
     return {
       links: [
         { link: 'http://www.twitter.com/dallinosmun',                   img: 'img/twitter.png'  },
-        { link: 'http://www.facebook.com/Veovis',                       img: 'img/facebook.png' },
+        { link: 'http://www.facebook.com/numso',                        img: 'img/facebook.png' },
         { link: 'http://www.linkedin.com/profile/view?id=42336136',     img: 'img/linkedin.png' },
         { link: 'http://plus.google.com/118106587848547452215?prsrc=3', img: 'img/gplus.png'    },
-        { link: 'https://github.com/numso', img: 'img/github.png'   }
+        { link: 'https://github.com/numso',                             img: 'img/github.png'   }
       ]
     };
   },

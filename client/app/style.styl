@@ -36,6 +36,21 @@ line-gradient(c1, c2)
   background: -ms-linear-gradient(top, c2, c1) no-repeat;
   background: linear-gradient(top, c2, c1) no-repeat;
 
+display-flex()
+  -ms-box-orient horizontal
+  display -webkit-box
+  display -moz-box
+  display -ms-flexbox
+  display -moz-flex
+  display -webkit-flex
+  display flex
+
+flex-grow()
+  -webkit-box-flex arguments
+  box-flex arguments
+  -webkit-flex-grow arguments
+  flex-grow arguments
+
 // Variables
 
 $floor_color = #404666
@@ -53,7 +68,7 @@ $main_grey = #414141
 
 .header
   .taglines
-    display flex
+    display-flex()
 
     > div
       flex-grow 1
@@ -89,7 +104,7 @@ $main_grey = #414141
 
 @media (min-width: 641px)
   .skills
-    display flex
+    display-flex()
 
     > div
       flex-grow 1
@@ -111,7 +126,7 @@ $main_grey = #414141
   min-height 150px
 
   .links-container
-    display flex
+    display-flex()
     max-width 600px
 
     > div
