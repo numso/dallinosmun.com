@@ -65,34 +65,36 @@ $main_grey = #414141
     font-size 48px
     color white
 
+@media (min-width: 641px)
+  .header-box
+    width 60%
+    border-top 13px solid $ceiling_color
+    border-left 50px solid $wall_color
+    border-right 50px solid $wall_color
+    border-bottom 8px solid $floor_color
+
 .header-box-container
   background-color $main_grey
-  min-width 930px
 
 .header-box
   circle-gradient #787571 #242424
   text-align center
   padding-top 200px
   height 500px
-  width 60%
-  min-width 550px
   margin 0 auto
-  border-top 13px solid $ceiling_color
-  border-left 50px solid $wall_color
-  border-right 50px solid $wall_color
-  border-bottom 8px solid $floor_color
 
 .info-box
   padding-top 150px
   line-gradient white $floor_color
-  min-width 930px
+
+@media (min-width: 641px)
+  .skills
+    display flex
+
+    > div
+      flex-grow 1
 
 .skills
-  display flex
-
-  > div
-    flex-grow 1
-
   .title
     display inline-block
     border-bottom 2px solid
@@ -106,12 +108,21 @@ $main_grey = #414141
 
 .social-box
   background-color $main_grey
+  min-height 150px
 
-.social-img
-  width 50px
-  border-radius 10px
-  background-color white
-  transition all 0.6s
+  .links-container
+    display flex
+    max-width 600px
 
-  &:hover
-    transform rotate(380deg)
+    > div
+      flex-grow 1
+      text-align center
+
+      img
+        width 50px
+        border-radius 10px
+        background-color white
+        transition all 0.6s
+
+        &:hover
+          transform rotate(380deg)

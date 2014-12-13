@@ -18,11 +18,11 @@ var Social = React.createClass({
     return (
       <div>
         <h1>Social</h1>
-        <div style={{display: 'flex'}}>
+        <div className="links-container">
           {this.state.links.map((l)=>(
-            <div style={{padding: 20}}>
+            <div>
               <a href={l.link} target="_blank">
-                <img src={l.img} className="social-img"/>
+                <img src={l.img}/>
               </a>
             </div>
           ))}
