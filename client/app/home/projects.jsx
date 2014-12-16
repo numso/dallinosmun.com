@@ -6,24 +6,33 @@ var Projects = React.createClass({
     return {
       projects: [
         { name: 'www.osmun.net' },
-        { name: 'www.lds.org' },
-        { name: 'jerrica.osmun.net' },
-        { name: 'www.antherion.com' },
-        { name: 'Speedy Shop School Project' },
         { name: 'pictures.dallinosmun.com' },
-        { name: 'www.kuali.co' },
+        { name: 'www.antherion.com' },
+        // { name: 'www.lds.org' },
+        // { name: 'jerrica.osmun.net' },
+        // { name: 'Speedy Shop School Project' },
+        // { name: 'www.kuali.co' },
       ]
     };
+  },
+
+  renderProject(project) {
+    return (
+      <div style={{flexGrow: 1, textAlign: 'center'}}>
+        <div style={{display: 'inline-block', backgroundColor: 'white', width: 200, height: 200}}>Screenshot goes here</div>
+        <div style={{padding: '10px 0'}}>{project.name}</div>
+      </div>
+    );
   },
 
   render() {
     return (
       <div>
         <h1>Projects</h1>
-        <p>Figure out how I want to display what I've worked on with these various projects. Do I want to show WIP?</p>
-        <ul>
-          {this.state.projects.map((i)=>(<li>{i.name}</li>))}
-        </ul>
+        <div style={{display:'flex'}}>
+          {this.state.projects.map(this.renderProject)}
+          <div style={{alignSelf: 'center'}}>(See More...)</div>
+        </div>
       </div>
     );
   }
