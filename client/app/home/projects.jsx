@@ -19,8 +19,10 @@ var Projects = React.createClass({
   renderProject(project) {
     return (
       <div style={{flexGrow: 1, textAlign: 'center'}}>
-        <img style={{boxShadow:'0 0 20px 2px rgba(0,0,0,.5)'}} src={project.img}/>
-        <div style={{padding: '10px 0'}}>{project.name}</div>
+        <a href={project.url} target="_blank">
+          <img style={{boxShadow:'0 0 20px 2px rgba(0,0,0,.5)'}} src={project.img}/>
+          <div style={{padding: '10px 0', color: 'black'}}>{project.name}</div>
+        </a>
       </div>
     );
   },
