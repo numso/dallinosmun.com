@@ -7,6 +7,7 @@ require('./style');
 var routes = (
   <Route path="/" handler={require('./wrapper')}>
     <DefaultRoute handler={require('./home')}/>
+    <Route path="/projects" handler={require('./projects')}/>
   </Route>
 );
 
