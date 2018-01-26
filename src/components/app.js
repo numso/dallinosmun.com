@@ -1,4 +1,4 @@
-import Head from 'next/head'
+import React from 'react'
 
 import Footer from './footer'
 import Header from './header'
@@ -6,15 +6,6 @@ import Header from './header'
 export default function App ({ children, subtitle }) {
   return (
     <div>
-      <Head>
-        <title>Dallin Osmun{subtitle && ` - ${subtitle}`}</title>
-        <meta name='viewport' content='width=device-width, initial-scale=1' />
-        <link
-          href='//fonts.googleapis.com/css?family=Syncopate:700|Carme'
-          rel='stylesheet'
-          type='text/css'
-        />
-      </Head>
       <Header />
       {children}
       <Footer />

@@ -1,4 +1,4 @@
-import App from '../components/app'
+import React from 'react'
 
 export default function Projects () {
   const projects = [
@@ -23,10 +23,10 @@ export default function Projects () {
     { name: 'www.kuali.co' }
   ]
   return (
-    <App subtitle='Projects'>
+    <div>
       <h1>Projects</h1>
       <p>TODO:: Find fancy way to layout and explain these projects</p>
       <ul>{projects.map(p => <li>{p.name}</li>)}</ul>
-    </App>
+    </div>
   )
 }

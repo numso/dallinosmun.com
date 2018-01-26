@@ -1,8 +1,8 @@
-import App from '../components/app'
+import React from 'react'
 
 export default function Home () {
   return (
-    <App subtitle='Home'>
+    <div>
       <div className='header-box-container'>
         <div className='row header-box'>
           <div>
@@ -125,7 +125,7 @@ export default function Home () {
           min-height: 150px;
         }
       `}</style>
-    </App>
+    </div>
   )
 }
 
@@ -189,18 +189,18 @@ function Social () {
   const links = [
     {
       link: 'http://www.twitter.com/dallinosmun',
-      img: 'static/img/twitter.png'
+      img: '/img/twitter.png'
     },
-    { link: 'http://www.facebook.com/numso', img: 'static/img/facebook.png' },
+    { link: 'http://www.facebook.com/numso', img: '/img/facebook.png' },
     {
       link: 'http://www.linkedin.com/profile/view?id=42336136',
-      img: 'static/img/linkedin.png'
+      img: '/img/linkedin.png'
     },
     {
       link: 'http://plus.google.com/118106587848547452215?prsrc=3',
-      img: 'static/img/gplus.png'
+      img: '/img/gplus.png'
     },
-    { link: 'https://github.com/numso', img: 'static/img/github.png' }
+    { link: 'https://github.com/numso', img: '/img/github.png' }
   ]
   return (
     <div>
@@ -275,17 +275,17 @@ function Projects () {
     {
       name: 'Osmun Family Site',
       url: 'http://www.osmun.net',
-      img: 'static/img/osmun-thumb.jpg'
+      img: '/img/osmun-thumb.jpg'
     },
     {
       name: 'Dynamic Visualizations',
       url: 'http://pictures.dallinosmun.com',
-      img: 'static/img/pictures-thumb.png'
+      img: '/img/pictures-thumb.png'
     },
     {
       name: 'Antherion Games',
       url: 'http://www.antherion.com',
-      img: 'static/img/antherion-thumb.png'
+      img: '/img/antherion-thumb.png'
     }
   ]
   return (

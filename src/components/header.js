@@ -1,11 +1,11 @@
-import Link from 'next/link'
+import React from 'react'
 
 export default function Header () {
   const navItems = [
     { name: 'Home', link: '/' },
-    { name: 'Games', link: '#' },
+    { name: 'Games', link: '/' },
     { name: 'Projects', link: '/projects' },
-    { name: 'Resume', link: '#' }
+    { name: 'Resume', link: '/' }
   ]
   return (
     <div className='root'>
@@ -78,9 +78,9 @@ function BlockLink ({ href, title }) {
           z-index: 10;
         }
       `}</style>
-      <Link prefetch href={href}>
-        <a className='letter'>{title[0]}</a>
-      </Link>
+      <a href={href} className='letter'>
+        {title[0]}
+      </a>
       <div className='title'>{title}</div>
     </div>
   )
