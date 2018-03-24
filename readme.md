@@ -4,16 +4,16 @@ Here's the frontend component for bydall.in
 
 ### Prerequisites
 
-You must have Node 7.9.0 / npm 4.2.0 installed
+You must have Node 8 and yarn installed
 
 ### For Development
 
-* npm run dev
+* yarn dev
 
 ### For Production
 
-* npm run build
-* npm start
+* yarn build
+* open dist/index.html
 
 ## Todo
 

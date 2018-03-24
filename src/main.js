@@ -1,130 +1,102 @@
 import React from 'react'
+import styled from 'styled-components'
+
+const HeaderBoxContainer = styled.div`
+  background-color: #414141;
+`
+
+const Row = styled.div`
+  display: flex;
+  justify-content: center;
+
+  > div {
+    width: 62.5rem;
+  }
+`
+
+const HeaderBox = styled(Row)`
+  @media (min-width: 641px) {
+    border-bottom: 8px solid #404666;
+    border-left: 50px solid #272727;
+    border-right: 50px solid #272727;
+    border-top: 13px solid #868383;
+    width: 60%;
+  }
+
+  background-color: #787571;
+  background: -webkit-gradient(
+      radial,
+      center 0,
+      0,
+      center 0,
+      100,
+      color-stop(0%, #787571),
+      color-stop(100%, #242424)
+    )
+    no-repeat;
+  background: -webkit-radial-gradient(center 0, circle cover, #787571, #242424)
+    no-repeat;
+  background: -moz-radial-gradient(center 0, circle cover, #787571, #242424)
+    no-repeat;
+  background: -o-radial-gradient(center 0, circle cover, #787571, #242424)
+    no-repeat;
+  background: -ms-radial-gradient(center 0, circle cover, #787571, #242424)
+    no-repeat;
+  background: radial-gradient(center 0, circle cover, #787571, #242424)
+    no-repeat;
+  height: 500px;
+  margin: 0 auto;
+  padding-top: 200px;
+  text-align: center;
+`
+
+const InfoBox = styled(Row)`
+  background-color: white;
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#404666), to(#fff));
+  background: -webkit-linear-gradient(top, #404666, #fff) no-repeat;
+  background: -moz-linear-gradient(top, #404666, #fff) no-repeat;
+  background: -o-linear-gradient(top, #404666, #fff) no-repeat;
+  background: -ms-linear-gradient(top, #404666, #fff) no-repeat;
+  background: linear-gradient(top, #404666, #fff) no-repeat;
+  padding-top: 150px;
+`
+
+const ProjectsBox = styled(Row)`
+  background-color: #727272;
+  box-shadow: 0 0 20px 2px rgba(0, 0, 0, 0.5);
+`
+
+const SocialBox = styled(Row)`
+  background-color: #414141;
+  min-height: 150px;
+`
 
 export default function Home () {
   return (
     <div>
-      <div className='header-box-container'>
-        <div className='row header-box'>
+      <HeaderBoxContainer>
+        <HeaderBox>
           <div>
             <Header />
           </div>
-        </div>
-      </div>
-      <div className='row info-box'>
+        </HeaderBox>
+      </HeaderBoxContainer>
+      <InfoBox>
         <div>
           <WhoAmI />
           <Skills />
         </div>
-      </div>
-      <div className='row projects-box'>
+      </InfoBox>
+      <ProjectsBox>
         <div>
           <Projects />
         </div>
-      </div>
-      <div className='row social-box'>
+      </ProjectsBox>
+      <SocialBox>
         <div>
           <Social />
         </div>
-      </div>
-      <style jsx>{`
-        .row {
-          display: flex;
-          justify-content: center;
-        }
-
-        .row > div {
-          width: 62.5rem;
-        }
-
-        @media (min-width: 641px) {
-          .header-box {
-            border-bottom: 8px solid #404666;
-            border-left: 50px solid #272727;
-            border-right: 50px solid #272727;
-            border-top: 13px solid #868383;
-            width: 60%;
-          }
-        }
-
-        .header-box-container {
-          background-color: #414141;
-        }
-
-        .header-box {
-          background-color: #787571;
-          background: -webkit-gradient(
-              radial,
-              center 0,
-              0,
-              center 0,
-              100,
-              color-stop(0%, #787571),
-              color-stop(100%, #242424)
-            )
-            no-repeat;
-          background: -webkit-radial-gradient(
-              center 0,
-              circle cover,
-              #787571,
-              #242424
-            )
-            no-repeat;
-          background: -moz-radial-gradient(
-              center 0,
-              circle cover,
-              #787571,
-              #242424
-            )
-            no-repeat;
-          background: -o-radial-gradient(
-              center 0,
-              circle cover,
-              #787571,
-              #242424
-            )
-            no-repeat;
-          background: -ms-radial-gradient(
-              center 0,
-              circle cover,
-              #787571,
-              #242424
-            )
-            no-repeat;
-          background: radial-gradient(center 0, circle cover, #787571, #242424)
-            no-repeat;
-          height: 500px;
-          margin: 0 auto;
-          padding-top: 200px;
-          text-align: center;
-        }
-
-        .info-box {
-          background-color: white;
-          background: -webkit-gradient(
-            linear,
-            0% 0%,
-            0% 100%,
-            from(#404666),
-            to(#fff)
-          );
-          background: -webkit-linear-gradient(top, #404666, #fff) no-repeat;
-          background: -moz-linear-gradient(top, #404666, #fff) no-repeat;
-          background: -o-linear-gradient(top, #404666, #fff) no-repeat;
-          background: -ms-linear-gradient(top, #404666, #fff) no-repeat;
-          background: linear-gradient(top, #404666, #fff) no-repeat;
-          padding-top: 150px;
-        }
-
-        .projects-box {
-          background-color: #727272;
-          box-shadow: 0 0 20px 2px rgba(0, 0, 0, 0.5);
-        }
-
-        .social-box {
-          background-color: #414141;
-          min-height: 150px;
-        }
-      `}</style>
+      </SocialBox>
     </div>
   )
 }
@@ -170,7 +142,7 @@ function WhoAmI () {
   state.games.push(game2)
 
   return (
-    <div className='who-am-i'>
+    <div>
       <h1>Who am I?</h1>
       <p>
         Hi, My name's Dallin Osmun and I'm a web developer. I graduated from
@@ -185,27 +157,51 @@ function WhoAmI () {
   )
 }
 
+const SocialLinks = styled.div`
+  display: flex;
+  max-width: 600px;
+
+  > div {
+    flex: 1;
+    text-align: center;
+
+    img {
+      background-color: white;
+      border-radius: 10px;
+      transition: all 0.6s;
+      width: 50px;
+
+      &:hover {
+        transform: rotate(380deg);
+      }
+    }
+  }
+`
+
 function Social () {
   const links = [
     {
       link: 'http://www.twitter.com/dallinosmun',
-      img: '/img/twitter.png'
+      img: require('./img/twitter.png')
     },
-    { link: 'http://www.facebook.com/numso', img: '/img/facebook.png' },
+    {
+      link: 'http://www.facebook.com/numso',
+      img: require('./img/facebook.png')
+    },
     {
       link: 'http://www.linkedin.com/profile/view?id=42336136',
-      img: '/img/linkedin.png'
+      img: require('./img/linkedin.png')
     },
     {
       link: 'http://plus.google.com/118106587848547452215?prsrc=3',
-      img: '/img/gplus.png'
+      img: require('./img/gplus.png')
     },
-    { link: 'https://github.com/numso', img: '/img/github.png' }
+    { link: 'https://github.com/numso', img: require('./img/github.png') }
   ]
   return (
     <div>
       <h1>Social</h1>
-      <div className='links'>
+      <SocialLinks>
         {links.map(l => (
           <div>
             <a href={l.link} target='_blank'>
@@ -213,59 +209,36 @@ function Social () {
             </a>
           </div>
         ))}
-      </div>
-      <style jsx>{`
-        .links {
-          display: flex;
-          max-width: 600px;
-        }
-
-        .links > div {
-          flex: 1;
-          text-align: center;
-        }
-
-        .links > div img {
-          background-color: white;
-          border-radius: 10px;
-          transition: all 0.6s;
-          width: 50px;
-        }
-
-        .links > div img:hover {
-          transform: rotate(380deg);
-        }
-      `}</style>
+      </SocialLinks>
     </div>
   )
 }
 
+const Taglines = styled.div`
+  display: flex;
+
+  > div {
+    color: #f5ce43;
+    flex: 1;
+    font-size: 20px;
+  }
+`
+
+const HeaderTitle = styled.div`
+  color: white;
+  font-family: 'Syncopate', sans-serif;
+  font-size: 48px;
+`
+
 function Header () {
   return (
-    <div className='header'>
-      <div className='title'>Dallin Osmun</div>
-      <div className='taglines'>
+    <div>
+      <HeaderTitle>Dallin Osmun</HeaderTitle>
+      <Taglines>
         <div>Web Designer</div>
         <div>Javascript Enthusiast</div>
         <div>Zelda Addict</div>
-      </div>
-      <style jsx>{`
-        .taglines {
-          display: flex;
-        }
-
-        .taglines > div {
-          color: #f5ce43;
-          flex: 1;
-          font-size: 20px;
-        }
-
-        .title {
-          color: white;
-          font-family: 'Syncopate', sans-serif;
-          font-size: 48px;
-        }
-      `}</style>
+      </Taglines>
     </div>
   )
 }
@@ -275,17 +248,17 @@ function Projects () {
     {
       name: 'Osmun Family Site',
       url: 'http://www.osmun.net',
-      img: '/img/osmun-thumb.jpg'
+      img: require('./img/osmun-thumb.jpg')
     },
     {
       name: 'Dynamic Visualizations',
       url: 'http://pictures.dallinosmun.com',
-      img: '/img/pictures-thumb.png'
+      img: require('./img/pictures-thumb.png')
     },
     {
       name: 'Antherion Games',
       url: 'http://www.antherion.com',
-      img: '/img/antherion-thumb.png'
+      img: require('./img/antherion-thumb.png')
     }
   ]
   return (
@@ -299,9 +272,14 @@ function Projects () {
   )
 }
 
+const Project = styled.div`
+  flex: 1;
+  text-align: center;
+`
+
 function renderProject (project) {
   return (
-    <div className='project'>
+    <Project>
       <a href={project.url} target='_blank'>
         <img
           style={{ boxShadow: '0 0 20px 2px rgba(0,0,0,.5)' }}
@@ -309,15 +287,19 @@ function renderProject (project) {
         />
         <div style={{ padding: '10px 0' }}>{project.name}</div>
       </a>
-      <style jsx>{`
-        .project {
-          flex: 1;
-          text-align: center;
-        }
-      `}</style>
-    </div>
+    </Project>
   )
 }
+
+const SkillsWrapper = styled.div`
+  @media (min-width: 641px) {
+    display: flex;
+
+    > div {
+      flex: 1;
+    }
+  }
+`
 
 function Skills () {
   const skills = [
@@ -355,7 +337,7 @@ function Skills () {
   ]
 
   return (
-    <div className='skills'>
+    <SkillsWrapper>
       {skills.map(({ items, title }) => (
         <div>
           <div style={{ textAlign: 'center' }}>
@@ -364,17 +346,6 @@ function Skills () {
           <ul>{items.map(i => <li>{i}</li>)}</ul>
         </div>
       ))}
-      <style jsx>{`
-        @media (min-width: 641px) {
-          .skills {
-            display: flex;
-          }
-
-          .skills > div {
-            flex: 1;
-          }
-        }
-      `}</style>
-    </div>
+    </SkillsWrapper>
   )
 }
