@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import Title from './components/title'
 import ProjectCard from './components/project-card'
 import AboutMe, { EM, BR } from './components/about-me'
+import Link from './components/link'
 
 const Projects = styled.div`
   margin: 0 auto;
@@ -21,34 +22,40 @@ export default function Home () {
       />
       <Projects>
         <ProjectCard
-          name='Osmun Family Site'
-          url='http://www.osmun.net'
-          img={require('./img/osmun.png')}
-        />
-        <ProjectCard
-          name='Dynamic Visualizations'
-          url='https://pictures.dallinosmun.com'
-          img={require('./img/ddv.png')}
-        />
-        <ProjectCard
-          name='Antherion Games'
-          url='http://www.antherion.com'
-          img={require('./img/antherion.png')}
-        />
-        <ProjectCard
-          name='Conway Simulation'
-          url='https://conway.dallinosmun.com'
-          img={require('./img/conway.png')}
+          name='Kuali Curriculum Management'
+          url='https://www.kuali.co/products/student/curriculum-management/'
+          img={require('./img/kuali-cm.png')}
+          date='2014 - 2018'
         />
         <ProjectCard
           name='Simplify CM'
           url='http://simplifycm.com'
           img={require('./img/simplify-cm.png')}
+          date='2016'
         />
         <ProjectCard
-          name='Kuali Curriculum Management'
-          url='https://www.kuali.co/products/student/curriculum-management/'
-          img={require('./img/kuali-cm.png')}
+          name='Conway Simulation'
+          url='https://conway.dallinosmun.com'
+          img={require('./img/conway.png')}
+          date='2015'
+        />
+        <ProjectCard
+          name='Dynamic Visualizations'
+          url='https://pictures.dallinosmun.com'
+          img={require('./img/ddv.png')}
+          date='2014 - 2015'
+        />
+        <ProjectCard
+          name='Antherion Games'
+          url='http://www.antherion.com'
+          img={require('./img/antherion.png')}
+          date='2012'
+        />
+        <ProjectCard
+          name='Osmun Family Site'
+          url='http://www.osmun.net'
+          img={require('./img/osmun.png')}
+          date='2009'
         />
       </Projects>
       <AboutMe>
@@ -61,9 +68,10 @@ export default function Home () {
         I'm all over that. If you need to turn your data into super slick charts
         using <EM>d3</EM> to help business owners make the right decisions, hit
         me up; Let's talk business. And if you need SOME OTHER THING, well, I
-        think you know where I'm going with this. Seriously, let's talk. <BR />{' '}
-        I'm currently learning how to apply functional concepts to reduce bugs,
-        keep code maintainable, and make apps more resilient to change by
+        think you know where I'm going with this. Seriously,{' '}
+        <Link href='https://www.linkedin.com/in/dallin-osmun'>let's talk</Link>.{' '}
+        <BR /> I'm currently learning how to apply functional concepts to reduce
+        bugs, keep code maintainable, and make apps more resilient to change by
         learning about and creating side projects in <EM>Elm</EM>.
       </AboutMe>
     </div>

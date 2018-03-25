@@ -26,7 +26,6 @@ You must have Node 8 and yarn installed
 ## Todo
 
 * [ ] Find a way to describe each project (maybe tooltip on hover?)
-* [ ] Add date of project to each card
 * [ ] Finish text in the who am i section
 * [ ] Make sure it looks good in mobile
 * [ ] Build a resume
