@@ -20,10 +20,10 @@ const Heading = styled.h1`
   text-align: center;
 `
 
-export default function AboutMe ({ children }) {
+export default function Letter ({ children, title }) {
   return (
     <Wrapper>
-      <Heading>Who am I?</Heading>
+      <Heading>{title}</Heading>
       <p>{children}</p>
     </Wrapper>
   )

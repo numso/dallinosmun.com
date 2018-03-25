@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 import Title from './components/title'
 import ProjectCard from './components/project-card'
-import AboutMe, { EM, BR } from './components/about-me'
+import Letter, { EM, BR } from './components/letter'
 import Link from './components/link'
 
 const Projects = styled.div`
@@ -58,7 +58,7 @@ export default function Home () {
           date='2009'
         />
       </Projects>
-      <AboutMe>
+      <Letter title='Who am I?'>
         Hi, My name's Dallin Osmun and I love to build{' '}
         <EM>products that delight users and make their lives easier</EM>. I'm
         really good at building web apps using <EM>React</EM>, <EM>Node</EM>,
@@ -73,9 +73,7 @@ export default function Home () {
         <BR /> I'm currently learning how to apply functional concepts to reduce
         bugs, keep code maintainable, and make apps more resilient to change by
         learning about and creating side projects in <EM>Elm</EM>.
-      </AboutMe>
+      </Letter>
     </div>
   )
 }
-
-// { link: 'https://github.com/numso', img: require('./img/github.png') }

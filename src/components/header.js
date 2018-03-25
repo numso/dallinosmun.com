@@ -17,6 +17,7 @@ const Wrapper = styled.div`
 
 const Name = styled.div`
   color: white;
+  flex: 1;
   letter-spacing: 10px;
   text-transform: uppercase;
 `
@@ -29,7 +30,7 @@ const Links = styled.div`
   }
 `
 
-const Letter = styled(Link)`
+const Initial = styled(Link)`
   align-items: center;
   background: rgba(0, 0, 0, 0.3);
   color: white;
@@ -69,9 +70,7 @@ const Title = styled.div`
 `
 
 export default function Header () {
-  // { name: 'Games', link: '/' },
-  // { name: 'Projects', link: '/projects' },
-  // { name: 'Resume', link: '/' }
+  // Games, Projects, Resume, Gitlab
   return (
     <Wrapper>
       <Name>Dallin Osmun</Name>
@@ -87,9 +86,9 @@ export default function Header () {
 function A ({ name, href, internal }) {
   return (
     <div>
-      <Letter href={href} internal={internal}>
+      <Initial href={href} internal={internal}>
         {name[0]}
-      </Letter>
+      </Initial>
       <Title>{name}</Title>
     </div>
   )
