@@ -1,28 +1,35 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import { slide } from './animations'
+import Link from './link'
+
 const Wrapper = styled.div`
+  animation-duration: 700ms;
+  animation-name: ${slide('-60px', true)};
   align-items: center;
   display: flex;
   justify-content: space-between;
   padding-left: 20px;
+  position: absolute;
+  width: 100%;
 `
 
 const Name = styled.div`
-  color: black;
+  color: white;
   letter-spacing: 10px;
   text-transform: uppercase;
 `
 
 const Links = styled.div`
   margin: 10px 0;
+
+  > div {
+    display: inline-block;
+  }
 `
 
-const Link = styled.div`
-  display: inline-block;
-`
-
-const Letter = styled.a`
+const Letter = styled(Link)`
   align-items: center;
   background: rgba(0, 0, 0, 0.3);
   color: white;
@@ -62,23 +69,28 @@ const Title = styled.div`
 `
 
 export default function Header () {
-  const navItems = [
-    { name: 'Home', link: '/' },
-    { name: 'Games', link: '/' },
-    { name: 'Projects', link: '/projects' },
-    { name: 'Resume', link: '/' }
-  ]
+  // { name: 'Games', link: '/' },
+  // { name: 'Projects', link: '/projects' },
+  // { name: 'Resume', link: '/' }
   return (
     <Wrapper>
       <Name>Dallin Osmun</Name>
       <Links>
-        {navItems.map(({ name, link }) => (
-          <Link key={name}>
-            <Letter href={link}>{name[0]}</Letter>
-            <Title>{name}</Title>
-          </Link>
-        ))}
+        <A name='Home' href='/' internal />
+        <A name='Github' href='https://www.github.com/numso' />
+        <A name='LinkedIn' href='https://www.linkedin.com/in/dallin-osmun' />
       </Links>
     </Wrapper>
+  )
+}
+
+function A ({ name, href, internal }) {
+  return (
+    <div>
+      <Letter href={href} internal={internal}>
+        {name[0]}
+      </Letter>
+      <Title>{name}</Title>
+    </div>
   )
 }
