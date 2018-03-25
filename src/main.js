@@ -13,6 +13,10 @@ const Projects = styled.div`
   text-align: center;
 `
 
+// When someone clicks on a project card, have it flip over and have the description and a visit button.
+// When someone clicks again; flip it back.
+// Should more than one card be able to be flipped at a time?
+
 export default function Home () {
   return (
     <div>
@@ -38,24 +42,58 @@ export default function Home () {
           url='https://conway.dallinosmun.com'
           img={require('./img/conway.png')}
           date='2015'
+          description={
+            <span>
+              During my first year at Kuali, at our yearly Kuali Days
+              conference, we had a hack night. The main focus was to help all
+              the developers from the company and the community get to know each
+              other. We only had a couple hours to finish something so my group
+              decided to build a simple{' '}
+              <Link href='https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life'>
+                Conway's Game of Life
+              </Link>{' '}
+              simulation. It was a really fun activity and I enjoyed learning
+              from others' coding experience and preferences.
+            </span>
+          }
         />
         <ProjectCard
           name='Dynamic Visualizations'
-          url='https://pictures.dallinosmun.com'
+          url='https://ddv.dallinosmun.com'
           img={require('./img/ddv.png')}
           date='2014 - 2015'
+          description={
+            <span>
+              This project is <EM>heavily</EM> inspired by{' '}
+              <Link href='https://vimeo.com/66085662'>
+                Bret Victor's Drawing Dynamic Visualizations
+              </Link>. Actually, it aims to be a direct clone of the tool he
+              used in the video but it's not yet complete. I saw that video and
+              fell in love. These could be the tools of the future. Yes, we'll
+              still always need the ability to drop down to code for advanced
+              cases, but that can be done in a way where the code you write is
+              for more building blocks in your tool. I want the majority of my
+              interaction with my tools to be direct manipulation.
+            </span>
+          }
         />
         <ProjectCard
           name='Antherion Games'
           url='http://www.antherion.com'
           img={require('./img/antherion.png')}
           date='2012'
+          description={
+            "During my senior year of high school, I started building iPhone games and apps under the name Antherion. It was a lot of fun! This was before Swift's time so the apps were all built in Objective-C. I've still got the code but I had to take the apps themselves off of the store. I didn't have time to update them, nor did I want to keep paying Apple's yearly fee. This site was built to promote those apps. Sadly, I never got around to advertising, promoting, or otherwise getting traffic to the site..."
+          }
         />
         <ProjectCard
           name='Osmun Family Site'
           url='http://www.osmun.net'
           img={require('./img/osmun.png')}
           date='2009'
+          description={
+            "When I was first starting out in web development, I built this site for my family. We already had the domain and needed something to put on it. I didn't even know javascript yet; this was back when I only knew a little PHP and not enough css to even do box shadows (look close, they're images). Looking back, I totally regret the color choices. Cut me some slack though, it was over a decade ago. I've gotten better. I promise!"
+          }
         />
       </Projects>
       <Letter title='Who am I?'>
@@ -77,3 +115,7 @@ export default function Home () {
     </div>
   )
 }
+
+// In the letter, first paragraph should be business based --- sell myself to the pm / business owner
+// second should be dev based (name all the tech you want) --- sell myself to the dm / dev team
+// third should be about learning? or just about me in general? --- show that I'm a good culture fit
