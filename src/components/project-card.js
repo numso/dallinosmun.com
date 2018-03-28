@@ -18,6 +18,7 @@ const Wrapper = styled.button`
 `
 
 const CardFace = styled.div`
+  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.3);
   transition: box-shadow 300ms, transform 800ms;
@@ -31,7 +32,6 @@ const Image = styled.img`
   border-bottom: 1px solid #aaa;
   display: block;
   width: 100%;
-
   user-drag: none;
   user-select: none;
   -moz-user-select: none;
