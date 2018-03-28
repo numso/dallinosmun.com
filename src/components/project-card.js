@@ -31,6 +31,13 @@ const Image = styled.img`
   border-bottom: 1px solid #aaa;
   display: block;
   width: 100%;
+
+  user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
 `
 
 const Details = styled(Link)`
