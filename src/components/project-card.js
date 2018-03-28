@@ -18,9 +18,9 @@ const Wrapper = styled.button`
 `
 
 const CardFace = styled.div`
-  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.3);
+  transform-style: preserve-3d;
   transition: box-shadow 300ms, transform 800ms;
 
   &:hover {
