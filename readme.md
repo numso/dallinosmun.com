@@ -1,29 +1,28 @@
-# bydall.in UI
+# dallinosmun.com
 
-Here's the frontend component for bydall.in
+Here's the code for dallinosmun.com / bydall.in
 
 ### Prerequisites
 
 You must have Node 8 and yarn installed
 
-### For Development
+### Development
 
+* yarn
 * yarn dev
+* open localhost:1234
 
-### For Production
+### Testing Production
 
+* yarn
 * yarn build
 * open dist/index.html
 
+### Deploying Production
+
+* git push
+* open dallinosmun.com
+
 ## Todo
 
-* [x] Hook up to new backend
-* [x] Authenticate the users/auth pages
-* [x] Figure out how to route to users/:id/edit and users/new endpoints
-* [ ] Revamp ALL the styles so it looks consistent and nice
-* [ ] Make sure loader looks good (footer always at the bottom)
-* [ ] Deploy to now
-* [ ] Tear down old instances
-* [ ] Render the ideas markdown into a protected section of the site
-* [ ] Start working on getting the zelda stuff hosted here (w graphql subscriptions)
-* [ ] put `return_to` back in
+* [ ] Build a resume

@@ -1,351 +1,164 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const HeaderBoxContainer = styled.div`
-  background-color: #414141;
-`
+import Title from './components/title'
+import ProjectCard from './components/project-card'
+import Letter, { EM, BR } from './components/letter'
+import Link from './components/link'
 
-const Row = styled.div`
-  display: flex;
-  justify-content: center;
-
-  > div {
-    width: 62.5rem;
-  }
-`
-
-const HeaderBox = styled(Row)`
-  @media (min-width: 641px) {
-    border-bottom: 8px solid #404666;
-    border-left: 50px solid #272727;
-    border-right: 50px solid #272727;
-    border-top: 13px solid #868383;
-    width: 60%;
-  }
-
-  background-color: #787571;
-  background: -webkit-gradient(
-      radial,
-      center 0,
-      0,
-      center 0,
-      100,
-      color-stop(0%, #787571),
-      color-stop(100%, #242424)
-    )
-    no-repeat;
-  background: -webkit-radial-gradient(center 0, circle cover, #787571, #242424)
-    no-repeat;
-  background: -moz-radial-gradient(center 0, circle cover, #787571, #242424)
-    no-repeat;
-  background: -o-radial-gradient(center 0, circle cover, #787571, #242424)
-    no-repeat;
-  background: -ms-radial-gradient(center 0, circle cover, #787571, #242424)
-    no-repeat;
-  background: radial-gradient(center 0, circle cover, #787571, #242424)
-    no-repeat;
-  height: 500px;
+const Projects = styled.div`
   margin: 0 auto;
-  padding-top: 200px;
+  margin-top: 100px;
+  max-width: 1980px;
   text-align: center;
-`
-
-const InfoBox = styled(Row)`
-  background-color: white;
-  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#404666), to(#fff));
-  background: -webkit-linear-gradient(top, #404666, #fff) no-repeat;
-  background: -moz-linear-gradient(top, #404666, #fff) no-repeat;
-  background: -o-linear-gradient(top, #404666, #fff) no-repeat;
-  background: -ms-linear-gradient(top, #404666, #fff) no-repeat;
-  background: linear-gradient(top, #404666, #fff) no-repeat;
-  padding-top: 150px;
-`
-
-const ProjectsBox = styled(Row)`
-  background-color: #727272;
-  box-shadow: 0 0 20px 2px rgba(0, 0, 0, 0.5);
-`
-
-const SocialBox = styled(Row)`
-  background-color: #414141;
-  min-height: 150px;
 `
 
 export default function Home () {
   return (
     <div>
-      <HeaderBoxContainer>
-        <HeaderBox>
-          <div>
-            <Header />
-          </div>
-        </HeaderBox>
-      </HeaderBoxContainer>
-      <InfoBox>
-        <div>
-          <WhoAmI />
-          <Skills />
-        </div>
-      </InfoBox>
-      <ProjectsBox>
-        <div>
-          <Projects />
-        </div>
-      </ProjectsBox>
-      <SocialBox>
-        <div>
-          <Social />
-        </div>
-      </SocialBox>
-    </div>
-  )
-}
-
-function getRandom (arr) {
-  return arr[Math.floor(Math.random() * arr.length)]
-}
-
-function WhoAmI () {
-  var books = [
-    'Wheel of Time',
-    "Ender's Game",
-    'Myst',
-    'Stormlight Archive',
-    'Mistborn',
-    'Reckoners'
-  ]
-  var shows = [
-    'Once upon a Time',
-    'The 100',
-    'Chuck',
-    'Big Bang Theory',
-    'The Flash',
-    'The Arrow',
-    'Firefly'
-  ]
-  var games = [
-    'Zelda',
-    'Minecraft',
-    'Starcraft',
-    'Starcraft II',
-    'Super Smash Brothers'
-  ]
-  var state = {
-    book: getRandom(books),
-    show: getRandom(shows),
-    games: [getRandom(games)]
-  }
-  var game2 = getRandom(games)
-  while (game2 === state.games[0]) {
-    game2 = getRandom(games)
-  }
-  state.games.push(game2)
-
-  return (
-    <div>
-      <h1>Who am I?</h1>
-      <p>
-        Hi, My name's Dallin Osmun and I'm a web developer. I graduated from
-        Utah State University and am now working for an awesome group called
-        KualiCo. I enjoy reading the {state.book} series and watching{' '}
-        {state.show} with my friends. In my spare time you'll probably find me
-        playing {state.games[0]} or {state.games[1]} (if I'm not coding, that
-        is). I love life and I'm a Mormon. Oh, and I make dang good Italian
-        food.
-      </p>
-    </div>
-  )
-}
-
-const SocialLinks = styled.div`
-  display: flex;
-  max-width: 600px;
-
-  > div {
-    flex: 1;
-    text-align: center;
-
-    img {
-      background-color: white;
-      border-radius: 10px;
-      transition: all 0.6s;
-      width: 50px;
-
-      &:hover {
-        transform: rotate(380deg);
-      }
-    }
-  }
-`
-
-function Social () {
-  const links = [
-    {
-      link: 'http://www.twitter.com/dallinosmun',
-      img: require('./img/twitter.png')
-    },
-    {
-      link: 'http://www.facebook.com/numso',
-      img: require('./img/facebook.png')
-    },
-    {
-      link: 'http://www.linkedin.com/profile/view?id=42336136',
-      img: require('./img/linkedin.png')
-    },
-    {
-      link: 'http://plus.google.com/118106587848547452215?prsrc=3',
-      img: require('./img/gplus.png')
-    },
-    { link: 'https://github.com/numso', img: require('./img/github.png') }
-  ]
-  return (
-    <div>
-      <h1>Social</h1>
-      <SocialLinks>
-        {links.map(l => (
-          <div>
-            <a href={l.link} target='_blank'>
-              <img src={l.img} />
-            </a>
-          </div>
-        ))}
-      </SocialLinks>
-    </div>
-  )
-}
-
-const Taglines = styled.div`
-  display: flex;
-
-  > div {
-    color: #f5ce43;
-    flex: 1;
-    font-size: 20px;
-  }
-`
-
-const HeaderTitle = styled.div`
-  color: white;
-  font-family: 'Syncopate', sans-serif;
-  font-size: 48px;
-`
-
-function Header () {
-  return (
-    <div>
-      <HeaderTitle>Dallin Osmun</HeaderTitle>
-      <Taglines>
-        <div>Web Designer</div>
-        <div>Javascript Enthusiast</div>
-        <div>Zelda Addict</div>
-      </Taglines>
-    </div>
-  )
-}
-
-function Projects () {
-  const projects = [
-    {
-      name: 'Osmun Family Site',
-      url: 'http://www.osmun.net',
-      img: require('./img/osmun-thumb.jpg')
-    },
-    {
-      name: 'Dynamic Visualizations',
-      url: 'http://pictures.dallinosmun.com',
-      img: require('./img/pictures-thumb.png')
-    },
-    {
-      name: 'Antherion Games',
-      url: 'http://www.antherion.com',
-      img: require('./img/antherion-thumb.png')
-    }
-  ]
-  return (
-    <div>
-      <h1>Projects</h1>
-      <div style={{ display: 'flex' }}>
-        {projects.map(renderProject)}
-        <div style={{ alignSelf: 'center' }}>(See More...)</div>
-      </div>
-    </div>
-  )
-}
-
-const Project = styled.div`
-  flex: 1;
-  text-align: center;
-`
-
-function renderProject (project) {
-  return (
-    <Project>
-      <a href={project.url} target='_blank'>
-        <img
-          style={{ boxShadow: '0 0 20px 2px rgba(0,0,0,.5)' }}
-          src={project.img}
+      <Title
+        title='Dallin Osmun'
+        subtitles={['Web Designer', 'Javascript Enthusiast', 'Zelda Addict']}
+      />
+      <Projects>
+        <ProjectCard
+          name='Kuali Curriculum Management'
+          url='https://www.kuali.co/products/student/curriculum-management/'
+          img={require('./img/kuali-cm.png')}
+          date='2014 - 2018'
+          description={
+            <span>
+              I have been working at this <EM>awesome place</EM> called Kuali.
+              We make administrative software for higher education. The majority
+              of my time here so far has been spent on this product that
+              digitizes a very manual and time-consuming process, helping
+              faculty members propose, approve, and update the curriculum at
+              their institution.
+            </span>
+          }
         />
-        <div style={{ padding: '10px 0' }}>{project.name}</div>
-      </a>
-    </Project>
-  )
-}
-
-const SkillsWrapper = styled.div`
-  @media (min-width: 641px) {
-    display: flex;
-
-    > div {
-      flex: 1;
-    }
-  }
-`
-
-function Skills () {
-  const skills = [
-    {
-      title: 'Skills Set',
-      items: [
-        'Web Design',
-        'Responsive Design',
-        'Server Side Coding',
-        'Knowledgable in RESTful API',
-        'Client Side Mashup',
-        'Good at Team Management'
-      ]
-    },
-    {
-      title: 'Programming Knowledge',
-      items: [
-        'HTML5',
-        'CSS3, Stylus, LESS',
-        'Javascript, ES6',
-        'Angular, React, Backbone',
-        'Express, Koa',
-        'Socket.io'
-      ]
-    },
-    {
-      title: 'Specialties',
-      items: [
-        'NodeJS Servers',
-        'Javascript with Client Side Mashup',
-        'CSS3 including transitions and animations',
-        'Responsive Design for mobile devices'
-      ]
-    }
-  ]
-
-  return (
-    <SkillsWrapper>
-      {skills.map(({ items, title }) => (
-        <div>
-          <div style={{ textAlign: 'center' }}>
-            <h2>{title}</h2>
-          </div>
-          <ul>{items.map(i => <li>{i}</li>)}</ul>
-        </div>
-      ))}
-    </SkillsWrapper>
+        <ProjectCard
+          name='Simplify CM'
+          url='http://simplifycm.com'
+          img={require('./img/simplify-cm.png')}
+          date='2016'
+          description={
+            <span>
+              Early on in Kuali, one of our designers designed an awesome
+              marketing page for our product. No one had time to build it so I
+              volunteered. It uses very minimal Javascript (just to enable the
+              parallax animations) and integrates directly into our sales
+              system.
+            </span>
+          }
+        />
+        <ProjectCard
+          name='Conway Simulation'
+          url='https://conway.dallinosmun.com'
+          img={require('./img/conway.png')}
+          date='2015'
+          description={
+            <span>
+              During my first year at Kuali, at our yearly Kuali Days
+              conference, we had a hack night. The main focus was to help all
+              the developers from the company and the community get to know each
+              other. We only had a couple hours to finish something so my group
+              decided to build a simple{' '}
+              <Link href='https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life'>
+                Conway's Game of Life
+              </Link>{' '}
+              simulation. It was a really fun activity and I enjoyed learning
+              from others' coding experience and preferences.
+            </span>
+          }
+        />
+        <ProjectCard
+          name='Dynamic Visualizations'
+          url='https://ddv.dallinosmun.com'
+          img={require('./img/ddv.png')}
+          date='2014 - 2015'
+          description={
+            <span>
+              This project is <EM>heavily</EM> inspired by{' '}
+              <Link href='https://vimeo.com/66085662'>
+                Bret Victor's Drawing Dynamic Visualizations
+              </Link>. Actually, it aims to be a direct clone of the tool he
+              used in the video but it's not yet complete. I saw that video and
+              fell in love. These could be the tools of the future! I believe we
+              will still always need the ability to drop down to code for
+              advanced cases, but I also think that can be done in a way where
+              the code you write is for more building blocks in your tool. I
+              want the majority of my interaction with my tools to be direct
+              manipulation.
+            </span>
+          }
+        />
+        <ProjectCard
+          name='Antherion Games'
+          url='http://www.antherion.com'
+          img={require('./img/antherion.png')}
+          date='2012'
+          description={
+            <span>
+              During my senior year of high school, I started building iPhone
+              games and apps under the name Antherion. It was a lot of fun! This
+              was before Swift's time so the apps were all built in Objective-C.
+              I've still got the code but I had to take the apps themselves off
+              of the store. I didn't have time to update them, nor did I want to
+              keep paying Apple's yearly fee. This site was built to promote
+              those apps. Sadly, I never got around to advertising, promoting,
+              or otherwise getting traffic to the site...
+            </span>
+          }
+        />
+        <ProjectCard
+          name='Osmun Family Site'
+          url='http://www.osmun.net'
+          img={require('./img/osmun.png')}
+          date='2009'
+          description={
+            <span>
+              When I was first starting out in web development, I built this
+              site for my family. We already had the domain and needed something
+              to put on it. I didn't even know javascript yet; this was back
+              when I only knew a little PHP and not enough css to even do box
+              shadows (look close, they're images). Looking back, I totally
+              regret the color choices. Cut me some slack though, it was over a
+              decade ago. I've gotten better. I promise!
+            </span>
+          }
+        />
+      </Projects>
+      <Letter title='Who am I?'>
+        Hi, my name's Dallin Osmun and I love to build{' '}
+        <EM>products that delight users and make their lives easier</EM>! If
+        you've got a project that requires <EM>offline support</EM> and{' '}
+        <EM>real-time updates</EM>, hit me up; I'm all over that. If you need to
+        turn your data into super slick charts to help business owners reason
+        about it and <EM>make the right decisions</EM>, hit me up; Let's talk
+        business. And if you need someone to automate an inefficient and
+        antiquated process to <EM>save people loads of time</EM>, well, I think
+        you know where I'm going with this. Seriously,{' '}
+        <Link href='https://www.linkedin.com/in/dallin-osmun'>let's talk</Link>.
+        <BR />
+        I'm really good at building web apps using <EM>React</EM>, <EM>Node</EM>,
+        and <EM>Mongo</EM> but I can handle <EM>Vue</EM> or <EM>Elm</EM> if
+        that's what tickles your fancy. I love writing code with{' '}
+        <EM>socket.io</EM> and <EM>d3</EM>; bonus points if you've got a project
+        where we can use them together! I've spent a lot of time studying{' '}
+        <EM>GraphQL</EM> and found it to be a very simple yet powerful way of
+        modeling your data and providing it to the front end. Mix that with{' '}
+        <EM>Apollo</EM> and you may not even need a state management library.
+        <BR />
+        Also, I really love to learn! I try and devote a large portion of my
+        time to learning. From Functional Programming concepts to Linear Algebra
+        to "How do you turn sand into computer chips?". I find it all
+        fascinating. I once built a multi-touch table out of plexiglass,
+        infra-red LEDS, and a $5 webcam. Nothing much came of it but I had a
+        blast figuring out how to make everything work and writing my own
+        software to run on it. I don't know much about blockchains, observables,
+        or event sourcing yet but I can guarantee you: I will soon.
+      </Letter>
+    </div>
   )
 }
