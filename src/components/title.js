@@ -1,4 +1,3 @@
-import { map } from 'lodash'
 import React from 'react'
 import styled from 'styled-components'
 
@@ -63,8 +62,10 @@ export default function ({ title, subtitles }) {
       <div>
         <HeaderTitle>{title}</HeaderTitle>
         <Subtitles>
-          {map(subtitles, (subtitle, i) => (
-            <Subtitle delay={`${1000 + i * 300}ms`}>{subtitle}</Subtitle>
+          {subtitles.map((subtitle, i) => (
+            <Subtitle key={i} delay={`${1000 + i * 300}ms`}>
+              {subtitle}
+            </Subtitle>
           ))}
         </Subtitles>
       </div>

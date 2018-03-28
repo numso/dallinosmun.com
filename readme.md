@@ -25,6 +25,4 @@ You must have Node 8 and yarn installed
 
 ## Todo
 
-* [ ] Find a way to describe each project (maybe tooltip on hover?)
-* [ ] Finish text in the who am i section
 * [ ] Build a resume

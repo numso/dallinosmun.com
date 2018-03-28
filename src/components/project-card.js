@@ -4,15 +4,23 @@ import styled from 'styled-components'
 import { slide } from './animations'
 import Link from './link'
 
-const Wrapper = styled(Link)`
+const Wrapper = styled.button`
   animation-duration: 700ms;
   animation-name: ${slide('100px')};
   background-color: white;
-  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.3);
+  border: none;
   display: inline-block;
   margin: 30px;
-  transition: box-shadow 300ms;
   max-width: 600px;
+  outline: none;
+  perspective: 800px;
+  position: relative;
+`
+
+const CardFace = styled.div`
+  backface-visibility: hidden;
+  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.3);
+  transition: box-shadow 300ms, transform 800ms;
 
   &:hover {
     box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.6);
@@ -25,7 +33,8 @@ const Image = styled.img`
   width: 100%;
 `
 
-const Details = styled.div`
+const Details = styled(Link)`
+  display: block;
   padding: 20px;
   text-align: left;
 `
@@ -39,14 +48,63 @@ const Date = styled.div`
   color: #aaa;
 `
 
-export default function ProjectCard (props) {
-  return (
-    <Wrapper href={props.url}>
-      <Image src={props.img} />
-      <Details>
-        <Title>{props.name}</Title>
-        <Date>{props.date}</Date>
-      </Details>
-    </Wrapper>
-  )
+const Front = styled(CardFace)`
+  transform: rotateY(${props => (props.flipped ? -180 : 0)}deg);
+`
+
+const Back = styled(CardFace)`
+  background: white;
+  font-size: 18px;
+  height: 100%;
+  padding: 30px;
+  position: absolute;
+  text-align: left;
+  top: 0;
+  transform: rotateY(${props => (props.flipped ? 180 : 0)}deg);
+`
+
+const Description = styled.div`
+  overflow: auto;
+  height: calc(100% - 70px);
+  margin-bottom: 30px;
+`
+
+const VisitLink = styled(Link)`
+  background: #61a0ff;
+  color: white;
+  display: block;
+  font-weight: bold;
+  padding: 10px 0;
+  text-align: center;
+  transition: background 200ms;
+
+  &:hover {
+    background: #488ef9;
+  }
+`
+
+export default class ProjectCard extends React.Component {
+  constructor (props) {
+    super(props)
+    this.state = { flipped: false }
+  }
+
+  render () {
+    const { flipped } = this.state
+    return (
+      <Wrapper onClick={() => this.setState({ flipped: !flipped })}>
+        <Front flipped={flipped}>
+          <Image src={this.props.img} />
+          <Details href={this.props.url}>
+            <Title>{this.props.name}</Title>
+            <Date>{this.props.date}</Date>
+          </Details>
+        </Front>
+        <Back flipped={!flipped}>
+          <Description>{this.props.description}</Description>
+          <VisitLink href={this.props.url}>visit</VisitLink>
+        </Back>
+      </Wrapper>
+    )
+  }
 }
