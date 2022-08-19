@@ -10,14 +10,18 @@ export default function ProjectCard ({ img, url, name, date, description }) {
     <Wrapper onClick={() => setFlipped(a => !a)}>
       <Front flipped={flipped}>
         <Image src={img} />
-        <Details href={url}>
+        <Details as={url ? Link : 'div'} href={url}>
           <Title>{name}</Title>
           <Date>{date}</Date>
         </Details>
       </Front>
       <Back flipped={!flipped}>
         <Description>{description}</Description>
-        <VisitLink href={url}>visit</VisitLink>
+        {url ? (
+          <VisitLink href={url}>visit</VisitLink>
+        ) : (
+          'Site no longer available'
+        )}
       </Back>
     </Wrapper>
   )
@@ -59,7 +63,7 @@ const Image = styled.img`
   -ms-user-select: none;
 `
 
-const Details = styled(Link)`
+const Details = styled.div`
   display: block;
   padding: 20px;
   text-align: left;

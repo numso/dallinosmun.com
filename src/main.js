@@ -15,7 +15,7 @@ export default function Home () {
       <Projects>
         <ProjectCard
           name='Kuali Curriculum Management'
-          url='https://www.kuali.co/products/student/curriculum-management/'
+          url='https://www.kuali.co/products/curriculum'
           img={require('./img/kuali-cm.png')}
           date='2014 - 2018'
           description={
@@ -31,7 +31,7 @@ export default function Home () {
         />
         <ProjectCard
           name='Simplify CM'
-          url='http://simplifycm.com'
+          url='https://simplifycm-archived.dallin.pro'
           img={require('./img/simplify-cm.png')}
           date='2016'
           description={
@@ -88,7 +88,6 @@ export default function Home () {
         />
         <ProjectCard
           name='Antherion Games'
-          url='http://www.antherion.com'
           img={require('./img/antherion.png')}
           date='2012'
           description={
@@ -106,7 +105,6 @@ export default function Home () {
         />
         <ProjectCard
           name='Osmun Family Site'
-          url='http://www.osmun.net'
           img={require('./img/osmun.png')}
           date='2009'
           description={
