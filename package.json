@@ -3,7 +3,7 @@
   "license": "UNLICENSED",
   "scripts": {
     "dev": "parcel src/index.html",
-    "build": "parcel build src/index.html --public-url / && cp _redirects dist/"
+    "build": "parcel build src/index.html --public-url /"
   },
   "dependencies": {
     "react": "18.2.0",
