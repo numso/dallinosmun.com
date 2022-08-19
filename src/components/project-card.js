@@ -2,7 +2,26 @@ import React from 'react'
 import styled from 'styled-components'
 
 import { slide } from './animations'
-import Link from './link'
+import { Link } from './ui'
+
+export default function ProjectCard ({ img, url, name, date, description }) {
+  const [flipped, setFlipped] = React.useState(false)
+  return (
+    <Wrapper onClick={() => setFlipped(a => !a)}>
+      <Front flipped={flipped}>
+        <Image src={img} />
+        <Details href={url}>
+          <Title>{name}</Title>
+          <Date>{date}</Date>
+        </Details>
+      </Front>
+      <Back flipped={!flipped}>
+        <Description>{description}</Description>
+        <VisitLink href={url}>visit</VisitLink>
+      </Back>
+    </Wrapper>
+  )
+}
 
 const Wrapper = styled.button`
   animation-duration: 700ms;
@@ -89,29 +108,3 @@ const VisitLink = styled(Link)`
     background: #488ef9;
   }
 `
-
-export default class ProjectCard extends React.Component {
-  constructor (props) {
-    super(props)
-    this.state = { flipped: false }
-  }
-
-  render () {
-    const { flipped } = this.state
-    return (
-      <Wrapper onClick={() => this.setState({ flipped: !flipped })}>
-        <Front flipped={flipped}>
-          <Image src={this.props.img} />
-          <Details href={this.props.url}>
-            <Title>{this.props.name}</Title>
-            <Date>{this.props.date}</Date>
-          </Details>
-        </Front>
-        <Back flipped={!flipped}>
-          <Description>{this.props.description}</Description>
-          <VisitLink href={this.props.url}>visit</VisitLink>
-        </Back>
-      </Wrapper>
-    )
-  }
-}

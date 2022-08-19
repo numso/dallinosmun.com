@@ -3,6 +3,23 @@ import styled from 'styled-components'
 
 import { slide } from './animations'
 
+export default function ({ title, subtitles }) {
+  return (
+    <HeaderBox>
+      <div>
+        <HeaderTitle>{title}</HeaderTitle>
+        <Subtitles>
+          {subtitles.map((subtitle, i) => (
+            <Subtitle key={i} delay={`${1000 + i * 300}ms`}>
+              {subtitle}
+            </Subtitle>
+          ))}
+        </Subtitles>
+      </div>
+    </HeaderBox>
+  )
+}
+
 const HeaderBox = styled.div`
   background-color: #787571;
   background: -webkit-gradient(
@@ -55,20 +72,3 @@ const HeaderTitle = styled.div`
   font-family: 'Syncopate', sans-serif;
   font-size: 48px;
 `
-
-export default function ({ title, subtitles }) {
-  return (
-    <HeaderBox>
-      <div>
-        <HeaderTitle>{title}</HeaderTitle>
-        <Subtitles>
-          {subtitles.map((subtitle, i) => (
-            <Subtitle key={i} delay={`${1000 + i * 300}ms`}>
-              {subtitle}
-            </Subtitle>
-          ))}
-        </Subtitles>
-      </div>
-    </HeaderBox>
-  )
-}

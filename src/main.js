@@ -1,17 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import Title from './components/title'
 import ProjectCard from './components/project-card'
-import Letter, { EM, BR } from './components/letter'
-import Link from './components/link'
-
-const Projects = styled.div`
-  margin: 0 auto;
-  margin-top: 100px;
-  max-width: 1980px;
-  text-align: center;
-`
+import Title from './components/title'
+import { Br, Em, Letter, Link } from './components/ui'
 
 export default function Home () {
   return (
@@ -28,7 +20,7 @@ export default function Home () {
           date='2014 - 2018'
           description={
             <span>
-              I have been working at this <EM>awesome place</EM> called Kuali.
+              I have been working at this <Em>awesome place</Em> called Kuali.
               We make administrative software for higher education. The majority
               of my time here so far has been spent on this product that
               digitizes a very manual and time-consuming process, helping
@@ -79,16 +71,17 @@ export default function Home () {
           date='2014 - 2015'
           description={
             <span>
-              This project is <EM>heavily</EM> inspired by{' '}
+              This project is <Em>heavily</Em> inspired by{' '}
               <Link href='https://vimeo.com/66085662'>
                 Bret Victor's Drawing Dynamic Visualizations
-              </Link>. Actually, it aims to be a direct clone of the tool he
-              used in the video but it's not yet complete. I saw that video and
-              fell in love. These could be the tools of the future! I believe we
-              will still always need the ability to drop down to code for
-              advanced cases, but I also think that can be done in a way where
-              the code you write is for more building blocks in your tool. I
-              want the majority of my interaction with my tools to be direct
+              </Link>
+              . Actually, it aims to be a direct clone of the tool he used in
+              the video but it's not yet complete. I saw that video and fell in
+              love. These could be the tools of the future! I believe we will
+              still always need the ability to drop down to code for advanced
+              cases, but I also think that can be done in a way where the code
+              you write is for more building blocks in your tool. I want the
+              majority of my interaction with my tools to be direct
               manipulation.
             </span>
           }
@@ -131,25 +124,25 @@ export default function Home () {
       </Projects>
       <Letter title='Who am I?'>
         Hi, my name's Dallin Osmun and I love to build{' '}
-        <EM>products that delight users and make their lives easier</EM>! If
-        you've got a project that requires <EM>offline support</EM> and{' '}
-        <EM>real-time updates</EM>, hit me up; I'm all over that. If you need to
+        <Em>products that delight users and make their lives easier</Em>! If
+        you've got a project that requires <Em>offline support</Em> and{' '}
+        <Em>real-time updates</Em>, hit me up; I'm all over that. If you need to
         turn your data into super slick charts to help business owners reason
-        about it and <EM>make the right decisions</EM>, hit me up; Let's talk
+        about it and <Em>make the right decisions</Em>, hit me up; Let's talk
         business. And if you need someone to automate an inefficient and
-        antiquated process to <EM>save people loads of time</EM>, well, I think
+        antiquated process to <Em>save people loads of time</Em>, well, I think
         you know where I'm going with this. Seriously,{' '}
         <Link href='https://www.linkedin.com/in/dallin-osmun'>let's talk</Link>.
-        <BR />
-        I'm really good at building web apps using <EM>React</EM>, <EM>Node</EM>,
-        and <EM>Mongo</EM> but I can handle <EM>Vue</EM> or <EM>Elm</EM> if
+        <Br />
+        I'm really good at building web apps using <Em>React</Em>, <Em>Node</Em>
+        , and <Em>Mongo</Em> but I can handle <Em>Vue</Em> or <Em>Elm</Em> if
         that's what tickles your fancy. I love writing code with{' '}
-        <EM>socket.io</EM> and <EM>d3</EM>; bonus points if you've got a project
+        <Em>socket.io</Em> and <Em>d3</Em>; bonus points if you've got a project
         where we can use them together! I've spent a lot of time studying{' '}
-        <EM>GraphQL</EM> and found it to be a very simple yet powerful way of
+        <Em>GraphQL</Em> and found it to be a very simple yet powerful way of
         modeling your data and providing it to the front end. Mix that with{' '}
-        <EM>Apollo</EM> and you may not even need a state management library.
-        <BR />
+        <Em>Apollo</Em> and you may not even need a state management library.
+        <Br />
         Also, I really love to learn! I try and devote a large portion of my
         time to learning. From Functional Programming concepts to Linear Algebra
         to "How do you turn sand into computer chips?". I find it all
@@ -162,3 +155,10 @@ export default function Home () {
     </div>
   )
 }
+
+const Projects = styled.div`
+  margin: 0 auto;
+  margin-top: 100px;
+  max-width: 1980px;
+  text-align: center;
+`

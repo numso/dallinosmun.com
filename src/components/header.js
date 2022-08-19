@@ -2,7 +2,32 @@ import React from 'react'
 import styled from 'styled-components'
 
 import { slide } from './animations'
-import Link from './link'
+import { Link } from './ui'
+
+export default function Header () {
+  // Games, Projects, Resume, Gitlab
+  return (
+    <Wrapper>
+      <Name>Dallin Osmun</Name>
+      <Links>
+        <A name='Home' href='/' internal />
+        <A name='Github' href='https://www.github.com/numso' />
+        <A name='LinkedIn' href='https://www.linkedin.com/in/dallin-osmun' />
+      </Links>
+    </Wrapper>
+  )
+}
+
+function A ({ name, href, internal }) {
+  return (
+    <div>
+      <Initial href={href} internal={internal}>
+        {name[0]}
+      </Initial>
+      <Title>{name}</Title>
+    </div>
+  )
+}
 
 const Wrapper = styled.div`
   animation-duration: 700ms;
@@ -68,28 +93,3 @@ const Title = styled.div`
   white-space: nowrap;
   z-index: -1;
 `
-
-export default function Header () {
-  // Games, Projects, Resume, Gitlab
-  return (
-    <Wrapper>
-      <Name>Dallin Osmun</Name>
-      <Links>
-        <A name='Home' href='/' internal />
-        <A name='Github' href='https://www.github.com/numso' />
-        <A name='LinkedIn' href='https://www.linkedin.com/in/dallin-osmun' />
-      </Links>
-    </Wrapper>
-  )
-}
-
-function A ({ name, href, internal }) {
-  return (
-    <div>
-      <Initial href={href} internal={internal}>
-        {name[0]}
-      </Initial>
-      <Title>{name}</Title>
-    </div>
-  )
-}
